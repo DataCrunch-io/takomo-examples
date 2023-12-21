@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { generate } from "random-words";
 
 const GENERATE_IMAGE_URL =
-  "https://api.takomo.ai/19386010-531f-4e44-8b5f-9dabe14395f5/sync";
+  "https://api.takomo.ai/93c5b30e-65a3-4fe8-9ab6-ee7919363063/sync";
 const BLIP_URL =
-  "https://api.takomo.ai/c1a9223f-f71c-4f6e-a17d-c3f354bcf69c/sync";
+  "https://api.takomo.ai/9f2baab9-1167-442e-8313-8840c65d6f34/sync";
 const SECRET_TOKEN =
-  "tk_d6316b21998ace1d6a216d00665c5449c2fbd4a533f8e9a4fa0fe2d238af4ad3c3cb6d7f2e1c0489f807c2d4ea0e2ce1";
+  "tk_5637b03bc94c76149d492f43b99e112d4a27c72ea37098a48f93616b867393d79152f837e54d1a5bc781c9f245620106";
 
 const NUMBER_OF_IMAGES = 4;
 
@@ -40,7 +40,7 @@ function Game() {
           Authorization: `Bearer ${SECRET_TOKEN}`,
         },
         body: JSON.stringify({
-          input_text: word,
+          input: word,
         }),
       });
       const data = await res.json();
@@ -125,10 +125,10 @@ function Game() {
                   hover:scale-105
                 "
                 />
-                {console.log(outputPrompts[id])}
-                {/* <p className="absolute top-1 left-1 w-full text-center text-xs font-bold text-white bg-black bg-opacity-50">
+                <p className="absolute top-1 left-1 w-full text-center text-xs font-bold text-white bg-black bg-opacity-50">
                   {outputPrompts[id]}
-                </p> */}
+                </p>
+                {/* {console.log(outputPrompts[id])} */}
               </>
             ) : (
               <div className="w-full h-full rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out bg-gray-300">
